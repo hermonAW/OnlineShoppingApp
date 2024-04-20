@@ -49,4 +49,34 @@ class ProductServiceApplicationTests {
                 .body("price", Matchers.equalTo(1000));
     }
 
+    @Test
+    void shouldReturnProducts(){
+        String requestBody1 = """
+                {
+                    "name": "iPhone 15",
+                    "description": "iPhone 15 is a smartphone by Apple",
+                    "price": 1000
+                }
+                """;
+
+        RestAssured.given()
+                .contentType("application/Json")
+                .body(requestBody1)
+                .when()
+                .post("/api/products")
+                .then()
+                .statusCode(201);
+
+        RestAssured.given()
+                //.contentType("application/json")
+                .when()
+                .get("/api/products")
+                .then()
+                .statusCode(200)
+                .body("", Matchers.hasSize(Matchers.greaterThan(0)))
+                .body("name", Matchers.hasItem("iPhone 15"))
+                .body("description", Matchers.hasItem("iPhone 15 is a smartphone by Apple"))
+                .body("price", Matchers.hasItem(1000));
+    }
+
 }
