@@ -35,6 +35,4 @@ build/
 
 ### VS Code ###
 .vscode/
-/docker/mogodb/data/
-/docker/mysql/data/
-/docker/
+
