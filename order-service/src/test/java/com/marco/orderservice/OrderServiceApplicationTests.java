@@ -49,6 +49,6 @@ class OrderServiceApplicationTests {
                 .body("quantity", Matchers.equalTo(1));
     }
 
-    
+
 
 }
