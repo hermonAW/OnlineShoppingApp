@@ -7,7 +7,8 @@ mvnw
 mvnw.cmd
 .mvn
 mysql
-
+/docker
+/volume-data
 
 ### STS ###
 .apt_generated
