@@ -6,7 +6,7 @@ target/
 mvnw
 mvnw.cmd
 .mvn
-
+docker/
 
 ### STS ###
 .apt_generated
